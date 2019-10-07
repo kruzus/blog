@@ -14,8 +14,9 @@ At last we can run npm start on both folders. It should run the server and open 
 
 # Todo 
 
-[ ] - Finish the UI
-[ ] - Setup the API to display data in view
-[ ] - Make functioning POST view
+- [ ] Finish server
+- [ ] Finish the UI
+- [ ] Setup the API to display data in view
+- [ ] Make functioning POST view
 
 ### Will be updated
