@@ -8,8 +8,8 @@ render(){
       <nav>
         <ul className="menu">
           <li className="logo">LOGO</li>
-          <li><a href="#">View</a></li>
-          <li><a href="#">Post</a></li>
+          <li><a href="#view">View</a></li>
+          <li><a href="#post">Post</a></li>
         </ul>
       </nav>
 

@@ -2,7 +2,21 @@
 import express from 'express';
 import {connection} from './db-connect';
 const app = express();
-const port = 8085;
+const port = 8000;
+
+
+var cors = require('cors')
+
+ 
+app.use(cors())
+ 
+app.get('/products/:id', function (req, res, next) {
+  res.json({msg: 'This is CORS-enabled for all origins!'})
+})
+ 
+app.listen(80, function () {
+  console.log('CORS-enabled web server listening on port 80')
+})
 
 app.get('/', (req, res) => {
   
