@@ -4,7 +4,7 @@ const mysql2_1 = require("mysql2");
 exports.connection = mysql2_1.createConnection({
     host: 'localhost',
     user: 'root',
-    password: 'root',
+    password: 'Accent77#!',
     database: 'blog'
 });
 exports.connection.connect();
