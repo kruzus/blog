@@ -28,8 +28,8 @@ export default class Blog extends Component {
         <td>Body</td>
         </tr>
         <tr>
-        <td>{jsx to map over posts for title}</td>
-        <td>{jsx to map over posts for body}</td>
+        {/* <td>{jsx to map over posts for title}</td>
+        <td>{jsx to map over posts for body}</td> */}
         </tr>
         </tbody>
         </table>
