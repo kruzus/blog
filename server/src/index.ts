@@ -5,32 +5,24 @@ const app = express();
 const port = 8000;
 
 
-var cors = require('cors')
-
- 
+let cors = require('cors')
+const corsPort = 3500;
 app.use(cors())
- 
-app.get('/products/:id', function (req, res, next) {
-  res.json({msg: 'This is CORS-enabled for all origins!'})
-})
- 
-app.listen(80, function () {
-  console.log('CORS-enabled web server listening on port 80')
+app.listen(corsPort, function () {
+  console.log(`CORS-enabled web server listening on port ${corsPort}`)
 })
 
 app.get('/', (req, res) => {
   
-  res.send("SERVER IS WORKING")
+  res.send("Go to /post to see database");
 });
 
 app.get('/posts', (req, res) => {
- connection.query("SELECT * FROM blog.posts", (err, result) => {
+ connection.query("SELECT * FROM blogDB.posts", (err, result) => {
    if (err){
      return res.send(err);
    } else {
-     return res.json({
-       data: result
-     });
+     return res.json(result);
    }
  });
 });
