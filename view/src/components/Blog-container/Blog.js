@@ -7,37 +7,28 @@ export default class Blog extends Component {
     posts: []
   };
 
-
   componentDidMount() {
-    axios.get(`http://localhost:8000/posts`)
-      .then(data => {
-      const posts = data.data;
-      this.setState({posts});
-      console.log(posts);
+    axios.get(`http://localhost:8000/posts`).then(res => {
+      const posts = res.data;
+      this.setState({ posts });
     });
   }
 
-
   render() {
-    const ViewPosts = (props) => {
-      return(
-        <table>
-        <tbody>
-        <tr>
-        <td>Title</td>
-        <td>Body</td>
-        </tr>
-        <tr>
-        {/* <td>{jsx to map over posts for title}</td>
-        <td>{jsx to map over posts for body}</td> */}
-        </tr>
-        </tbody>
-        </table>
-      )
-    }
-
-    return <div className="blog">
-      <ViewPosts />
-    </div>;
+    const ViewPosts = props => {
+      return (
+        <div className="blog">
+          <h1>{props.title}</h1>
+          <h1>{props.body}</h1>
+        </div>
+      );
+    };
+    return (
+      <div>
+        {this.state.posts.map(posts => (
+          <ViewPosts title={posts.title} body={posts.body} key={posts.id}/>
+        ))}
+      </div>
+    );
   }
 }
