@@ -1,7 +1,25 @@
+* {
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+}
 .blog {
     color: white;
     
     text-align: center;
     padding-top: 2em;
     
+    width: 50%;
+    margin: 0 auto;
+    
+}
+
+.blogTitle {
+    border: 1px solid black;
+    word-wrap: break-word;
+}
+
+.blogBody {
+    border: 1px solid black;
+    width: auto;
+    word-wrap: break-word;
 }
