@@ -8,14 +8,14 @@ export default class Blog extends Component {
   };
 
   componentDidMount() {
-    axios.get(`http://localhost:8000/posts`).then(res => {
+    axios.get(`http://127.0.0.1:8000/posts`).then(res => {
       const posts = res.data;
       this.setState({ posts });
     });
   }
 
   render() {
-    const ViewPosts = props => {
+    const ViewPosts = (props) => {
       return (
         <div className="blog">
           <div className="blogTitle">{props.title}</div>
@@ -26,9 +26,8 @@ export default class Blog extends Component {
     return (
       <div className="blog">
         {this.state.posts.map(posts => (
-          <ViewPosts title={posts.title} body={posts.body} key={posts.id}/>
+          <ViewPosts title={posts.title} body={posts.body} key={posts.id} />
         ))}
-
       </div>
     );
   }
