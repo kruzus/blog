@@ -18,16 +18,17 @@ export default class Blog extends Component {
     const ViewPosts = props => {
       return (
         <div className="blog">
-          <h1>{props.title}</h1>
-          <h1>{props.body}</h1>
+          <div className="blogTitle">{props.title}</div>
+          <div className="blogBody">{props.body}</div>
         </div>
       );
     };
     return (
-      <div>
+      <div className="blog">
         {this.state.posts.map(posts => (
           <ViewPosts title={posts.title} body={posts.body} key={posts.id}/>
         ))}
+
       </div>
     );
   }
