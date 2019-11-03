@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {BrowserRouter as Router, Switch , Route} from 'react-router-dom';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
 
 
 import Header from "./components/Header/Header";
@@ -15,7 +15,7 @@ export default class App extends Component {
         <Header />
         <Route exact path="/" component={Blog} />
         <Route exact path="/post" component={Post} />
-        </Router>
+      </Router>
     );
   }
 }
