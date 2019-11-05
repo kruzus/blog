@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
     res.send("Go to /post to see database");
 });
 app.get('/posts', (req, res) => {
-    db_connect_1.connection.query("SELECT * FROM blogDB.posts", (err, result) => {
+    db_connect_1.connection.query("SELECT * FROM blogdb.posts", (err, result) => {
         if (err) {
             return res.send(err);
         }

@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/posts', (req, res) => {
- connection.query("SELECT * FROM blogDB.posts", (err, result) => {
+ connection.query("SELECT * FROM blogdb.posts", (err, result) => {
    if (err){
      return res.send(err);
    } else {
@@ -26,7 +26,6 @@ app.get('/posts', (req, res) => {
    }
  });
 });
-
 
 app.listen(port, err => {
   if (err) {
