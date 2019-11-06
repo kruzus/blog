@@ -18,3 +18,6 @@ I know this is a simple blog app but I am here to learn the core technlogies tha
 - [ ] Add POST to insert into `Database`
 
 *More will be added*
+
+
+# Almost done with the project
