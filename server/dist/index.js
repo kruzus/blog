@@ -17,9 +17,6 @@ app.listen(corsPort, function () {
 });
 app.use(bodyParser.json());
 app.post("/posts", function (req, res, next) {
-    console.log(req.body.title);
-    console.log(req.body.body);
-    console.log("connected");
     var sql = "INSERT INTO `blogdb`.`posts` (`title`, `body`) VALUES ('" + req.body.title + "','" + req.body.body + "')";
     db_connect_1.connection.query(sql, function (err, result) {
         if (err)

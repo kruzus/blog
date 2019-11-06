@@ -18,11 +18,6 @@ app.use(bodyParser.json());
 
 app.post("/posts", function(req, res, next) {
   
-  console.log(req.body.title);
-  console.log(req.body.body);
- 
-
-console.log("connected");
 var sql = "INSERT INTO `blogdb`.`posts` (`title`, `body`) VALUES ('"+req.body.title+"','"+req.body.body+"')";
 
 

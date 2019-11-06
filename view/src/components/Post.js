@@ -28,7 +28,20 @@ export default class Post extends Component {
       console.log(`body is: ${this.state.body}`);
       event.preventDefault();
     }
+
+    axios.post('http://192.168.1.6:8000/posts', {
+      title: `${this.state.title}`,
+      body: `${this.state.body}`
+    })
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
   }
+
+
 
 
   render() {

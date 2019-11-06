@@ -8,7 +8,7 @@ export default class Blog extends Component {
   };
 
   componentDidMount() {
-    axios.get(`http://127.0.0.1:8000/posts`).then(res => {
+    axios.get(`http://192.168.1.6:8000/posts`).then(res => {
       const posts = res.data;
       this.setState({ posts });
     });
