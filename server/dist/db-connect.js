@@ -8,12 +8,5 @@ exports.connection = mysql2_1.createConnection({
     password: process.env.DB_PASS,
     database: process.env.DB_DB
 });
-// export const connection = createConnection({
-//     host: '127.0.0.1',
-//     user: 'root',
-//     port: 3306,
-//     password: 'groot',
-//     database: 'blogdb'
-// });
 exports.connection.connect();
 //# sourceMappingURL=db-connect.js.map

@@ -1,42 +1,55 @@
-import React, { Component } from 'react';
-import axios from 'axios';
+import React, { Component } from "react";
+// import axios from 'axios';
 
-import './post.scss';
+import "./post.scss";
 
 export default class Post extends Component {
-    state = {
-        posts: []
-      }
-    
-      handleChange = event => {
-        this.setState({ blogTitle: event.target.value });
-      }
-    
-      handleSubmit = event => {
-        event.preventDefault();
-    
-      
-    
-        axios.post('http://localhost:8000/posts' , {
-            title: this.state.post.blogTitle,
-            body: this.state.posts.blogBody
-  
-        })
-      }
+  constructor(props) {
+    super(props);
+    this.state = {
+      title: "",
+      body: ""
+    };
 
-render(){
-  return(
-  
-<div className="center">
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event) {
+    //this.setState({ title: event.target.name, body: event.target.value });
+    this.setState({ [event.target.name]: event.target.value }); 
+  }
+
+  handleSubmit(event) {
+
+    
+    if ((this.state.title === "") && (this.state.body === "")){
+      alert("Please  type something");
+    } else {
+      console.log(`title is ${this.state.title}`);
+      console.log(`body is: ${this.state.body}`);
+      event.preventDefault();
+    }
+  }
+
+
+
+  render() {
+    return (
+      <div className="center">
         <form onSubmit={this.handleSubmit}>
           <label>
-            <input type="text" name="blogTitle" placeholder="Title..." />
-            <input type="text" name="blogBody" placeholder="Body..." />
+            Title:
+            <input type="text" value={this.state.title} name="title" onChange={this.handleChange} />
           </label>
-          <button type="submit">Post</button>
+          <label>
+            <br />
+            Body:
+            <input type="text" value={this.state.body} name="body"  onChange={this.handleChange} />
+          </label>
+          <input type="submit" value="Submit" />
         </form>
       </div>
-  
-  )
-}
+    );
+  }
 }

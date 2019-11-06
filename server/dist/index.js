@@ -8,16 +8,16 @@ const express_1 = __importDefault(require("express"));
 const db_connect_1 = require("./db-connect");
 const app = express_1.default();
 const port = 8000;
-let cors = require('cors');
+let cors = require("cors");
 const corsPort = 3500;
 app.use(cors());
 app.listen(corsPort, function () {
     console.log(`CORS-enabled web server listening on port ${corsPort}`);
 });
-app.get('/', (req, res) => {
+app.get("/", (req, res) => {
     res.send("Go to /post to see database");
 });
-app.get('/posts', (req, res) => {
+app.get("/posts", (req, res) => {
     db_connect_1.connection.query("SELECT * FROM blogdb.posts", (err, result) => {
         if (err) {
             return res.send(err);
